@@ -1,4 +1,4 @@
-import Home from '@/pages-components/index'
+import Home from '@/pages-components/home'
 import React from "react";
 import {GetServerSideProps} from "next";
 
