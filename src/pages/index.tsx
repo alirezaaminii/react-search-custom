@@ -1,15 +1,22 @@
-import Head from 'next/head'
+import Home from '@/pages-components/index'
+import React from "react";
+import {GetServerSideProps} from "next";
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Tehran Areas</title>
-        <meta name="description" content="Tehran Areas" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      test
-    </>
-  )
-}
+export type HomeProps = {
+  cities: string[];
+};
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async context => {
+  const { name } = context.query;
+
+  const res = await fetch(`http://localhost:3000/api/cities${name ? `?name=${name}` : ''}`);
+  const cities = await res.json();
+
+  return {
+    props: {
+      cities
+    }
+  };
+};
+
+export default Home

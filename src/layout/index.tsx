@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const Layout: React.FunctionComponent<Props> = ({ children }) => (
+export const Layout: React.FunctionComponent<Props> = ({children}) => (
   <LayoutContainer>
     {children}
   </LayoutContainer>
