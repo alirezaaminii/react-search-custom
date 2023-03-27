@@ -11,4 +11,9 @@ export const LayoutContainer = styled.div`
   border: 1px solid ${colors.secondary};
   margin: 0 auto;
   transition: all 200ms;
+
+  @media screen and (max-width: 500px) {
+    height: 100vh;
+    border: none;
+  }
 `;
