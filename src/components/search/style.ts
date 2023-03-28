@@ -61,10 +61,6 @@ export const SearchStyles = styled.div`
       &::-ms-clear, &::-ms-reveal {
         color: inherit;
       }
-      
-      &:focus ~ .clear , &:hover ~ .clear {
-        display: block;
-      }
     }
     
     .label {
@@ -78,7 +74,6 @@ export const SearchStyles = styled.div`
     }
     
     .clear {
-      display: none;
       color: ${colors.primary};
       cursor: pointer;
     }

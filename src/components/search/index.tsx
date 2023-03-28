@@ -26,13 +26,18 @@ const Search: React.FC<SearchProps> = (props) => {
     props.onSubmit(value.trim());
   };
 
-  const handleCancel = () => {
+  const handleCancel = (event: React.MouseEvent<HTMLOrSVGElement>) => {
+    event.stopPropagation();
     setValue('');
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
   };
+
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
+    event.preventDefault();
+  }
 
   return (
     <SearchStyles>
@@ -50,6 +55,7 @@ const Search: React.FC<SearchProps> = (props) => {
           value={value}
           onKeyDown={handleKeyDown}
           onChange={handleChange}
+          onFocus={handleFocus}
           placeholder={props.placeholder}
         />
         {
