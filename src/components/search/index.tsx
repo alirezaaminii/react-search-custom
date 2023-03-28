@@ -35,7 +35,7 @@ const Search: React.FC<SearchProps> = (props) => {
   };
 
   return (
-    <SearchStyles htmlFor="search">
+    <SearchStyles>
       {
         value === ''
         ? <SearchIcon className="left-icon" onClick={handleSubmit} />
