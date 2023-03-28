@@ -10,16 +10,29 @@ export const ListItemStyles = styled.li<Props>`
   height: 48px;
   background: ${colors.white};
   color: ${colors.primary};
-  border-bottom: 1px solid ${colors.stroke};
-  padding: 8px;
+  padding: 0 12px;
   cursor: pointer;
   user-select: none;
   
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    
+    border-bottom: 1px solid ${colors.stroke};
+    padding: 8px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &:last-of-type {
+    .wrapper {
+      border-bottom: 0;
+    }
+  }
   
-  &:focus {
+  &:focus, &:hover {
     outline: 0;
     background: ${colors.primary + 20};
   }

@@ -18,8 +18,10 @@ const ListItem: React.FC<ListItemProps> = (props) => {
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      <div className="name">{props.name}</div>
-      <div className="status"/>
+      <div className="wrapper">
+        <div className="name">{props.name}</div>
+        <div className="status"/>
+      </div>
     </ListItemStyles>
   );
 };
