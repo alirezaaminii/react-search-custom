@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {colors} from "@/styles/colors";
 
-const headerHeight = 40;
+const headerHeight = 60;
 
 export const HomePageStyles = styled.div`
   position: relative;
@@ -15,7 +15,7 @@ export const HomePageStyles = styled.div`
     width: 100%;
     height: ${headerHeight}px;
     background: ${colors.white};
-    padding: 4px 8px;
+    padding: 6px 8px;
     display: flex;
     align-items: center;
     box-shadow: 0 0 10px rgba(29, 40, 58, 0.15);
