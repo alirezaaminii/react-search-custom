@@ -1,11 +1,6 @@
 import React from "react";
 import {ListItemStyles} from "@/components/item/style";
-
-interface ListItemProps {
-  name: string;
-  selected: boolean;
-  onSelect: () => void;
-}
+import {ListItemProps} from "@/components/item/types";
 
 const ListItem: React.FC<ListItemProps> = (props) => {
 
