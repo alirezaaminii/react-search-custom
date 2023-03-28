@@ -1,20 +1,15 @@
 import {NextApiRequest, NextApiResponse} from "next";
 
-const cities: string[] = [
-  'New York',
-  'Los Angeles',
-  'Chicago',
-  'Houston',
-  'Philadelphia',
-  'Phoenix',
-  'San Antonio',
-  'San Diego',
-  'Dallas',
-  'San Jose'
-];
+const cities: string[] =
+  [
+    'London', 'Manchester', 'Birmingham', 'Glasgow', 'Liverpool',
+    'Bristol', 'Leeds', 'Newcastle', 'Nottingham', 'Sheffield',
+    'Brighton', 'Cardiff', 'Edinburgh', 'Southampton', 'Portsmouth',
+    'Belfast', 'Dublin', 'Oxford', 'Cambridge', 'Aberdeen'
+  ];
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { name = '' } = req.query;
+  const {name = ''} = req.query;
 
   const filteredCities = cities.filter(city => city.toLowerCase().includes(name.toString().toLowerCase()));
 
