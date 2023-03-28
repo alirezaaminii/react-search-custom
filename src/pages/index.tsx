@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async context =
   const res = await NetworkService.request<null, null, string[]>({
     config: {
       method: 'GET',
-      url: `http://localhost:3000/api/cities${name ? `?name=${name}` : ''}`,
+      url: `cities${name ? `?name=${name}` : ''}`,
     },
   });
 
