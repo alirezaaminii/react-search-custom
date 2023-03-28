@@ -42,7 +42,7 @@ const Search: React.FC<SearchProps> = (props) => {
       {
         value === '' && !isFocused
           ? <SearchIcon className="left-icon" onClick={handleSubmit}/>
-          : <BackIcon className="left-icon" onClick={handleCancel}/>
+          : <BackIcon className="left-icon back-icon" onClick={handleCancel}/>
       }
 
       <div>
@@ -57,7 +57,7 @@ const Search: React.FC<SearchProps> = (props) => {
         />
         {
           value === '' && !isFocused ? <div className="label">{props.label}</div> :
-            <ClearIcon onClick={handleCancel} className="clear"/>
+            value !== '' && <ClearIcon onClick={handleCancel} className="clear"/>
         }
       </div>
     </SearchStyles>

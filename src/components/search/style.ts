@@ -32,6 +32,10 @@ export const SearchStyles = styled.div`
     max-width: ${iconWidth}px;
     height: 24px;
     cursor: pointer;
+    
+    &.back-icon {
+      color: ${colors.primary};
+    }
   }
   
   div {
@@ -74,7 +78,7 @@ export const SearchStyles = styled.div`
     }
     
     .clear {
-      color: ${colors.primary};
+      color: ${colors.secondary};
       cursor: pointer;
     }
   }
