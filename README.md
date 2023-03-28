@@ -1,4 +1,4 @@
-![Search_Component]()
+![Search_Component](https://github.com/alirezaaminii/react-search-custom-component/blob/main/MergedImages.png)
 ## Search Component
 A simple search component
 
