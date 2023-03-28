@@ -19,7 +19,7 @@ export const ListItemStyles = styled.li<Props>`
     height: 100%;
     
     border-bottom: 1px solid ${colors.stroke};
-    padding: 8px 0;
+    padding: 8px 10px 8px 0;
 
     display: flex;
     justify-content: space-between;
@@ -40,11 +40,11 @@ export const ListItemStyles = styled.li<Props>`
   .status {
     box-sizing: border-box;
     padding: 4px;
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     border-radius: 16px;
     background: ${(props) => props.selected ? colors.success : colors.white};
-    outline-offset: 2px;
+    outline-offset: 3px;
     outline: 2px solid ${(props) => props.selected ? colors.success : colors.secondary};
     transition: all 200ms;
   }
