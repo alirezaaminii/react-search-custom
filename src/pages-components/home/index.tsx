@@ -6,6 +6,15 @@ import {useState} from "react";
 import Search from "@/components/search";
 import {useRouter} from "next/router";
 
+const translation = {
+  pageTitle: 'React Search Component',
+  search: {
+    placeholder: 'Search in',
+    label: 'UK Cities',
+  },
+  notFound: 'Not found',
+}
+
 export default function Home(props: HomeProps) {
   const router = useRouter();
   const [selectedItem, setSelectedItem] = useState<string>('');
@@ -25,14 +34,14 @@ export default function Home(props: HomeProps) {
   return (
     <HomePageStyles>
       <Head>
-        <title>React Search Component</title>
+        <title>{translation.pageTitle}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       <div className="header">
         <Search
-          placeholder="Search in"
-          label="UK"
+          placeholder={translation.search.placeholder}
+          label={translation.search.label}
           onSubmit={handleChangeSearchedItem}
           initialValue={router.query.name?.toString() ?? ''}
         />
@@ -40,7 +49,7 @@ export default function Home(props: HomeProps) {
       <div className="list">
         {
           props.cities.length === 0
-            ? <div className="not-found">Not found</div>
+            ? <div className="not-found">{translation.notFound}</div>
             : <ul>
               {
                 props.cities.map(city => (
