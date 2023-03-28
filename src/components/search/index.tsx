@@ -3,10 +3,12 @@ import {SearchStyles} from "@/components/search/style";
 import {SearchProps} from "@/components/search/types";
 import {useDebounce} from "@/hooks/useDebounce";
 import {BackIcon, ClearIcon, SearchIcon} from "@/components/icons";
+import {useFocus} from "@/hooks/useFocus";
 
 const Search: React.FC<SearchProps> = (props) => {
   const [value, setValue] = useState(props.initialValue ?? "");
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef(null);
+  const isFocused = useFocus(inputRef);
   const debouncedValue = useDebounce<string>(value, 500);
 
   const handleDebouncedValueChange = useCallback(() => handleSubmit(), [debouncedValue]);
@@ -35,16 +37,12 @@ const Search: React.FC<SearchProps> = (props) => {
     setValue(event.target.value)
   };
 
-  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-    event.preventDefault();
-  }
-
   return (
     <SearchStyles>
       {
-        value === ''
-        ? <SearchIcon className="left-icon" onClick={handleSubmit} />
-        : <BackIcon className="left-icon" onClick={handleCancel} />
+        value === '' && !isFocused
+          ? <SearchIcon className="left-icon" onClick={handleSubmit}/>
+          : <BackIcon className="left-icon" onClick={handleCancel}/>
       }
 
       <div>
@@ -55,11 +53,11 @@ const Search: React.FC<SearchProps> = (props) => {
           value={value}
           onKeyDown={handleKeyDown}
           onChange={handleChange}
-          onFocus={handleFocus}
           placeholder={props.placeholder}
         />
         {
-          value === '' ? <div className="label">{props.label}</div> : <ClearIcon onClick={handleCancel} className="clear" />
+          value === '' && !isFocused ? <div className="label">{props.label}</div> :
+            <ClearIcon onClick={handleCancel} className="clear"/>
         }
       </div>
     </SearchStyles>
