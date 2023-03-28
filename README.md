@@ -3,7 +3,7 @@
 A simple search component
 
 ## Live Demo
-Check out the [live demo]() of the application.
+Check out the [live demo](https://search-component-test.vercel.app/) of the application.
 
 ## Todos
 
@@ -12,6 +12,7 @@ There are a couple of things that can be improved in this application:
 1. not debouncing when click on back or clear icon
 2. refactor the label structure of search component
 3. show clear icon when user is focused on search input
+4. less important: add msw for mocking APIs
 
 ## Technical Details
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
