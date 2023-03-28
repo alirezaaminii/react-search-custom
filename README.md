@@ -12,7 +12,8 @@ There are a couple of things that can be improved in this application:
 1. not debouncing when click on back or clear icon
 2. refactor the label structure of search component
 3. show clear icon when user is focused on search input
-4. less important: add msw for mocking APIs
+4. add error boundary
+5. less important: add msw for mocking APIs
 
 ## Technical Details
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
