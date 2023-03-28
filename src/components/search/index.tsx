@@ -7,7 +7,7 @@ import {useFocus} from "@/hooks/useFocus";
 
 const Search: React.FC<SearchProps> = (props) => {
   const [value, setValue] = useState(props.initialValue ?? "");
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const isFocused = useFocus(inputRef);
   const debouncedValue = useDebounce<string>(value, 500);
 
@@ -37,6 +37,10 @@ const Search: React.FC<SearchProps> = (props) => {
     setValue(event.target.value)
   };
 
+  const handleFocusOnInput = () => {
+    inputRef?.current?.focus();
+  };
+
   return (
     <SearchStyles>
       {
@@ -56,7 +60,7 @@ const Search: React.FC<SearchProps> = (props) => {
           placeholder={props.placeholder}
         />
         {
-          value === '' && !isFocused ? <div className="label">{props.label}</div> :
+          value === '' && !isFocused ? <div className="label" onClick={handleFocusOnInput}>{props.label}</div> :
             value !== '' && <ClearIcon onClick={handleCancel} className="clear"/>
         }
       </div>
