@@ -1,3 +1,18 @@
+![Search_Component]()
+## Search Component
+A simple search component
+
+## Live Demo
+Check out the [live demo]() of the application.
+
+## Todos
+
+There are a couple of things that can be improved in this application:
+
+1. not debouncing when click on back or clear icon
+2. refactor the label structure of search component
+
+## Technical Details
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
